@@ -3,16 +3,14 @@
 <main>
   <div>
     <h1>{{ .Title }}</h1>
-    <article>
-      {{ .Content }}
-    </article>
   </div>
-
-  <div>
+  <ul>
     {{ range .Pages }}
-      {{ .Render "card" }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
     {{ end }}
-    </div>
+  </ul>
 </main>
 
 {{ end }}

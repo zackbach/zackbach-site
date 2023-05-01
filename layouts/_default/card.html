@@ -1,0 +1,20 @@
+<article>
+  <header>
+    <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
+    <div>{{ .Date.Format "Jan 2, 2006" }}</div>
+    {{ with .GetTerms "tags" }}
+      <ul>
+        {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </header>
+
+  <!-- Replace the "maxLength" value to change how many characters -->
+  {{ partial "truncate" (dict "input" .Summary "maxLength" 75) }}
+
+  {{ if .Truncated }}
+    <a href='{{ .Permalink }}'><nobr>Read more...</nobr></a>
+  {{ end }}
+</article>

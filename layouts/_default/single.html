@@ -5,6 +5,15 @@
   <div>
     <h4>{{ .Date.Format "Jan 2, 2006" }}</h4>
     <h5>{{ .WordCount }} Words </h5>
+
+    {{ with .GetTerms "tags" }}
+      <ul>
+        {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+
     <article>
       {{ .Content }}
     </article>
