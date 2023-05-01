@@ -1,0 +1,21 @@
+<nav>
+  <ul>
+    
+    <li>
+      <a href="/">Zack Eisbach</a>
+    </li>
+    
+    {{- range site.Menus.main }}
+    <li>
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    </li>
+    {{- end }}
+
+    {{ with resources.GetMatch "zeisbach-resume.pdf" }}
+    <li>
+      <a href="{{ .Permalink }}" target="_blank">Resume</a>
+    </li>
+    {{ end }}
+
+  </ul>
+</nav>

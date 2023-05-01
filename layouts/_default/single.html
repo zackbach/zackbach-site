@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<section>
+  <h1>{{ .Title }}</h1>
+  <div>
+    <h4>{{ .Date.Format "Jan 2, 2006" }}</h4>
+    <h5>{{ .WordCount }} Words </h5>
+    <article>
+      {{ .Content }}
+    </article>
+  </div>
+</section>
+
+{{ end }}
