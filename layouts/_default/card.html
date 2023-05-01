@@ -1,6 +1,9 @@
 <article>
   <header>
     <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
+    {{ with resources.GetMatch ( path.Join "thumbnails" .Params.thumbnail ) }} 
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+    {{ end }}
     <div>{{ .Date.Format "Jan 2, 2006" }}</div>
     {{ with .GetTerms "tags" }}
       <ul>

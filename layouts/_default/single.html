@@ -3,6 +3,10 @@
 <section>
   <h1>{{ .Title }}</h1>
   <div>
+    {{ with resources.GetMatch ( path.Join "thumbnails" .Params.thumbnail ) }} 
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+    {{ end }}
+
     <h4>{{ .Date.Format "Jan 2, 2006" }}</h4>
     <h5>{{ .WordCount }} Words </h5>
 
