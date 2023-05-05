@@ -10,7 +10,7 @@ def main(args):
 
     match resp['project_id']:
         case 163283056:
-            return {"body" : {"currently" : "sleeping", "color" : "#9e5bd9"}}
+            return {"body" : {"currently" : "napping" if "Napping" in tags else "sleeping", "color" : "#9e5bd9"}}
         case 163283062:
             return {"body" : {"currently" : "playing games with friends" if "friends" in tags else "playing games", "color" : "#2da608"}}
         case 163283071:
@@ -22,7 +22,7 @@ def main(args):
         case 163283087:
             return {"body" : {"currently" : "eating with friends" if "friends" in tags else "eating", "color" : "#e36a00"}}
         case 163283089:
-            return {"body" : {"currently" : "spending time with " + ("family" if "Family" in tags else "friends"), "color" : "#06a893"}}
+            return {"body" : {"currently" : "socializing with " + ("family" if "Family" in tags else "friends"), "color" : "#06a893"}}
         case 163283101:
             return {"body" : {"currently" : "scrolling", "color" : "#bf7000"}}
         case 163283106:
