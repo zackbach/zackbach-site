@@ -18,7 +18,7 @@
 
 <script>
   async function getCurrentEntry() {
-    const data = await fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-9b606617-10c3-4ee5-8e6a-f627ab7b0250/default/get-current-entry");
+    const data = await fetch("https://zack-eisbach-wkpfa.ondigitalocean.app/toggl/get-current-time-entry");
     const entry = await data.json();
   
     const current = document.getElementById("tracker");
