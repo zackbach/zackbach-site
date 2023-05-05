@@ -11,6 +11,22 @@
     {{ partial "header.html" . }}
     <h1>Zack Eisbach</h1>
     {{ .Content }}
+    <p>Zack is currently <span id="tracker">...</span></p>
   </body>
 
 </html>
+
+<script>
+  async function getCurrentEntry() {
+    const data = await fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-9b606617-10c3-4ee5-8e6a-f627ab7b0250/default/get-current-entry");
+    const entry = await data.json();
+  
+    const current = document.getElementById("tracker");
+    current.innerHTML = entry.currently;
+    current.style.color = entry.color;
+  }
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    getCurrentEntry();
+  });
+</script>
