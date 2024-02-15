@@ -13,18 +13,14 @@ When making calls to C functions, we have no choice but to comply with architect
 
 To call a function currently, the caller pushes its arguments onto the stack in reverse order:
 ```asm
-push arg_M
+push arg_M        ; push last arg first ...
 ...
-push arg_7
-mov R9, arg_6
-mov R8, arg_5
-mov RCX, arg_4
-mov RDX, arg_3
-mov RSI, arg_2
-mov RDI, arg_1
-call target
-add RSP, 8*(M - 6)
+push arg_2        ; then the second ...
+push arg_1        ; finally the first
+call target       ; make the call (which puts return addr on stack)
+add RSP, 8*M      ; now we are back: "clear" args by adding 8*numArgs
 ```
+
 Note that upon entry to a function, `RSP` must be a multiple of 16, meaning we actually may need to push an extra padding word onto the stack before `arg_M`.
 After the `target` function returns, we have to increment `RSP` to clear off the space that the $M$ arguments took up on the stack.
 
