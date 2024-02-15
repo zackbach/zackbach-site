@@ -140,7 +140,7 @@ Implement the damn compiler.
 
 ## Conclusion
 
-The content of this note stems primarily from a discussion with Ben Lerner about the implementation of his Diamondback compiler:
+The content of this note stems primarily from a discussion with Ben Lerner about the implementation of the Diamondback compiler:
 
 {{< figure src="board.jpeg">}}
 
