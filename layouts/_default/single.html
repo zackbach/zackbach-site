@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section>
+<main>
   <h1>{{ .Title }}</h1>
   <div>
     {{ with resources.GetMatch ( path.Join "thumbnails" .Params.thumbnail ) }} 
@@ -22,6 +22,6 @@
       {{ .Content }}
     </article>
   </div>
-</section>
+</main>
 
 {{ end }}

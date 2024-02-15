@@ -1,0 +1,96 @@
+/* CSS Basics: https://youtu.be/ydGti7sLVOc?si=1o11-zxf59GLDJn2 */
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+img, picture, svg {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  width: min(65ch, 100% - 4rem);
+  margin-inline: auto;
+}
+
+/*
+GoAT formatting from https://philipphagenlocher.de/post/hugo-tips-tricks/
+*/
+
+.goat {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.goat-scale {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.goat > svg {
+  font-family: monospace;
+  font-size: medium;
+}
+
+@media only screen and (max-width: 650px) {
+  .goat-scale {
+    width: 100% !important;
+  }
+}
+
+/* Callouts from https://www.youtube.com/watch?v=DDQO_3R-q74,
+   which emulates https://quarto.org/docs/authoring/callouts.html */
+
+.callout {
+  margin-top: 1em;
+  margin-bottom: 1em;  
+  border-radius: .25rem;
+  border-left: solid #acacac .3rem;
+  border-right: solid 0.5px silver;
+  border-top: solid 0.5px silver;
+  border-bottom: solid 0.5px silver;
+  border-left-color: #9834eb !important;
+}
+
+.callout-header {
+  /*margin-top: 0.5em;*/
+  margin-bottom: 0.5em;
+  border-top-right-radius: .25rem;
+  border-bottom: none;
+  font-weight: 600;
+  opacity: 85%;
+  font-size: 0.9rem;
+  padding: 0.5em;
+  padding-bottom: 0em;
+  display: flex;
+  /* background-color: #f5e8ff; */
+  height: 2em;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  .callout-header {
+    background-color: #f5e8ff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .callout-header {
+    background-color: #40036e;
+  }
+}
+
+.callout-body {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0.5em;
+  padding-top: 0em;
+}

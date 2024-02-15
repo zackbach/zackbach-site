@@ -1,0 +1,4 @@
+<!-- GoAT from https://philipphagenlocher.de/post/hugo-tips-tricks/ -->
+<div class="goat-scale" {{ with .Get 0 }}style="width: {{ . }}%;"{{ end }}>
+  {{ .Inner | printf "```goat%s```" | markdownify }}
+</div>

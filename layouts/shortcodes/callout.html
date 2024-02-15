@@ -1,0 +1,10 @@
+<!-- TODO: figure out how to do this with Markdown shortcodes -->
+<div class="callout"> 
+  <div class="callout-header">
+    {{ .Get 0 | markdownify }}
+  </div>
+  <div class="callout-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
+  

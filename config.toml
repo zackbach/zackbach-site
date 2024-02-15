@@ -1,7 +1,0 @@
-baseURL = ''
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-sectionPagesMenu = 'main'
-
-[taxonomies]
-  tag = 'tags'
