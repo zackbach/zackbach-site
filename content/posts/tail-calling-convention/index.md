@@ -121,6 +121,10 @@ Be careful when pushing `RBP` onto the stack and using it. Be sure to do the pro
 
 A simple problem implied above comes as a ramification of being unable to use the `call` instruction. Notable, we now need to push a return instruction onto the stack, *then continue to push arguments*. The function should return to the caller *after the arguments have been pushed*, so we cannot just look at the instruction pointer. Instead, we can define a new label `foo_returns_here` to know the proper return address without having to do extra address math. We can push this label (which is just an address) onto the stack, and returning with `ret` will jump to that label.
 
+{{< callout "Warning:" >}}
+You probably won't be able to push the label onto the stack directly, at least not on systems that use `macho64` (at least in my experience). The correct incantation is `lea REG, [rel label]` to load the effective address of the label, relative to the instruction pointer, into the given register. This can then be pushed onto the stack like normal.
+{{< /callout >}}
+
 Before, when we were loading arguments into other argument slots, we had to be careful not to load a new argument into a spot that would be used to load a later new argument. This issue is still present, and we need to be more cautious now that we can be loading arguments into slots currently occupied by local variables. Various techniques to tackle this issue are discussed in Lecture 9; the easiest of which is to push such arguments onto the stack and pop them into place.
 
 {{< callout "Warning:" >}}

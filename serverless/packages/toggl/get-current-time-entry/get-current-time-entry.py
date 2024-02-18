@@ -38,10 +38,14 @@ def main(args):
         case 166780430:
             return {"body" : {"currently" : "booting up", "color" : "#06a893"}}
         case 178792504:
+            if "TA" in tags:
+                return {"body" : {"currently" : "working as a TA", "color" : "#c7af14"}}
             return {"body" : {"currently" : "at work", "color" : "#c7af14"}}
         case 163284076:
             return {"body" : {"currently" : "in class", "color" : "#d92b2b"}}
         case 164680168:
             return {"body" : {"currently" : "working out", "color" : "#0b83d9"}}
+        case 197511128:
+            return {"body" : {"researching programming languages" : "at work", "color" : "#c7af14"}}
         case _:
             return {"body" : {"currently" : "doing something", "color" : "#000000"}}
