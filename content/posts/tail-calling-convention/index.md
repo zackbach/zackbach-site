@@ -88,7 +88,7 @@ This approach can work for first-class functions. However, the true problem aris
 We have not yet discussed compilation in the presence of first-class functions, so this example is still somewhat nebulous. However, I am quite certain that this approach will break, and that lambdas will be the cause of it.
 {{< /callout >}}
 
-Once functions start becoming objects we can manipulate at runtime, as opposed to ones that exist only within our compiler, determining which functions are called gets very undecidable, very quickly. It could be possible to achieve some arity approximation using techniques from data flow analysis, but this seems quite difficult.
+Once functions start becoming objects we can manipulate at runtime, as opposed to ones that exist only within our compiler, determining which functions are called gets very undecidable, very quickly. It could be possible to achieve some arity approximation using techniques from dataflow analysis, but this seems quite difficult. For those interested, [these notes](https://cs.au.dk/~amoeller/spa/spa.pdf) on static program analysis may be of interest (specifically Chapter 5: Dataflow Analysis with Monotone Frameworks).
 
 
 ## Approach 2: Change the convention
