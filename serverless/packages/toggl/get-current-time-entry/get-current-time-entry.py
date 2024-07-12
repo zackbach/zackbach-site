@@ -40,6 +40,8 @@ def main(args):
         case 178792504:
             if "TA" in tags:
                 return {"body" : {"currently" : "working as a TA", "color" : "#c7af14"}}
+            if "Research Co-Op" in tags:
+                return {"body" : {"currently" : "researching programming languages", "color" : "#c7af14"}}
             return {"body" : {"currently" : "at work", "color" : "#c7af14"}}
         case 163284076:
             return {"body" : {"currently" : "in class", "color" : "#d92b2b"}}
