@@ -1,3 +1,9 @@
++++
+title = 'The State of Rust to WebAssembly Compilation'
+date = 2024-07-12T14:22:47-04:00
+tags = ['Compilers', 'Rust', 'WebAssembly']
++++
+
 Historically, there was much debate over how structs are passed (directly or indirectly), which ties into the multivalue proposal. The star of the show is (perhaps unsurprisingly, given the state of general ABI discourse) the C ABI for Wasm. In chronological order...
 
 `wasm-unknown-unknown` was added as a compilation target, and `wasm-bindgen` was written (with some naive encoding). However, `wasm-bindgen` did not match the [C ABI for Wasm](https://github.com/WebAssembly/tool-conventions/blob/main/BasicCABI.md) used by Clang/LLVM
